@@ -1,6 +1,5 @@
-import 'package:aibuzz/screens/auth/loginpage.dart';
+import 'package:aibuzz/authentication/loginpage.dart';
 import 'package:aibuzz/provider/bookmark_provider.dart';
-import 'package:aibuzz/screens/news/newsfeed.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,7 +19,7 @@ void main() async {
   
   final bookmarkProvider = BookmarkProvider();
   
-  // Check if user is logged in and set their email in the bookmark provider
+
   final prefs = await SharedPreferences.getInstance();
   final userEmail = prefs.getString('email');
   if (userEmail != null) {
@@ -107,7 +106,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: themeProvider.themeMode,
-      home: NewsFeed(),
+      home: HomeScreen(),
     );
   }
 }
